@@ -1,0 +1,12 @@
+#Sample Filter
+whitelist:
+  - testfor
+  - tell
+  - say
+blacklist:
+  - tp
+  - kill
+worlds:
+  - world
+  - world_nether
+  - world_the_end

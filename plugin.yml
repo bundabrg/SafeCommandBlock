@@ -1,0 +1,15 @@
+name: SafeCommandBlock
+main: me.KevinW1998.SafeCommandBlock.SafeCommandBlock
+version: 1.1
+description: >
+              Secure your command blocks and ban/whitelist commands of your choice
+depend: [ProtocolLib]
+commands:
+  resetcommand:
+    description: Reset the command of a command block!
+  setcommandname:
+    description: Set/Reset the name of a command block!
+  setcommand:
+    description: Set the command of a command block!
+  scbreload:
+    description: Reload config and filter of Safe Command Block
