@@ -1,4 +1,4 @@
-package me.KevinW1998.SafeCommandBlock;
+package me.KevinW1998.SafeCommandBlock.utils;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -14,8 +14,24 @@ import org.bukkit.util.Vector;
 
 public class SafeCommandUtils {
 	
+	public static boolean isStringNullOrEmpty(String s) {
+		if(s != null)
+			return s.equals("");
+		return true;
+	}
 	
+	public static boolean isOpOrHasPermission(Player p, String permission) {
+		return p.isOp() || p.hasPermission(permission);
+	}
 	
+	public static String join(String[] array, String seperator)
+	{
+		String out = "";
+		for(String nextElement : array) {
+			out += seperator + nextElement; 
+		}
+		return out.substring(seperator.length());
+	}
 	
 	public static Block getTargetBlock(Player player, int range) {
 		Location loc = player.getEyeLocation();
@@ -64,6 +80,8 @@ public class SafeCommandUtils {
 	}
 	
 	public static String getRootCmd(String cmd) {
-		return cmd.substring(1).split(" ")[0];
+		if(cmd.startsWith("/"))
+			cmd = cmd.substring(1);
+		return cmd.split(" ")[0];
 	}
 }

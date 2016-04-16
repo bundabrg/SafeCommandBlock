@@ -1,1 +1,75 @@
 { a = { a = -114, b = 80, c = 298 }, b = 2, c = {"name": "null", "CustomName": "[Kevin]", "Command": "Moner", "x": -114, "y": 80, "z": 298, "id": "Control", "SuccessCount": 0, "TrackOutput": 1} }
+
+Server:
+
+]: [ProtocolLib] Sent PacketPlayOutKeepAlive[0, legacy: 0] to KevinW1998.
+]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW1998.
+]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW1998.
+]: [ProtocolLib] Sent PacketPlayOutKeepAlive[0, legacy: 0] to KevinW1998.
+]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW1998.
+]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW1998.
+]: [ProtocolLib] Sent PacketPlayOutKeepAlive[0, legacy: 0] to KevinW1998.
+]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW1998.
+]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW1998.
+]: [ProtocolLib] Sent PacketPlayOutPlayerInfo[56, legacy: 201] to KevinW199
+]: [ProtocolLib] Sent PacketPlayOutKeepAlive[0, legacy: 0] to KevinW1998.
+]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW1998.
+]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW1998.
+]: [ProtocolLib] Sent PacketPlayOutTileEntityData[53, legacy: 132] to Kevin
+]: [ProtocolLib] Sent PacketPlayOutBlockChange[35, legacy: 53] to KevinW199
+]: [ProtocolLib] Sent PacketPlayOutBlockChange[35, legacy: 53] to KevinW199
+]: [ProtocolLib] Sent PacketPlayOutKeepAlive[0, legacy: 0] to KevinW1998.
+]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW1998.
+
+]: [ProtocolLib] Sent PacketPlayOutTileEntityData[53, legacy: 132] to Kevin
+]: [ProtocolLib] Sent PacketPlayOutBlockChange[35, legacy: 53] to KevinW199
+]: [ProtocolLib] Sent PacketPlayOutBlockChange[35, legacy: 53] to KevinW199
+]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW1998.
+
+]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW1998.
+]: [ProtocolLib] Sent PacketPlayOutKeepAlive[0, legacy: 0] to KevinW1998.
+]: [ProtocolLib] Sent PacketPlayOutSpawnEntityLiving[15, legacy: 24] to Kev
+]: [ProtocolLib] Sent PacketPlayOutEntityMetadata[28, legacy: 40] to KevinW
+]: [ProtocolLib] Sent PacketPlayOutUpdateAttributes[32, legacy: 44] to Kevi
+]: [ProtocolLib] Sent PacketPlayOutSpawnEntityLiving[15, legacy: 24] to Kev
+]: [ProtocolLib] Sent PacketPlayOutEntityMetadata[28, legacy: 40] to KevinW
+]: [ProtocolLib] Sent PacketPlayOutUpdateAttributes[32, legacy: 44] to Kevi
+]: [ProtocolLib] Sent PacketPlayOutEntityMetadata[28, legacy: 40] to KevinW
+]: [ProtocolLib] Sent PacketPlayOutUpdateAttributes[32, legacy: 44] to Kevi
+]: [ProtocolLib] Sent PacketPlayOutEntityMetadata[28, legacy: 40] to KevinW
+]: [ProtocolLib] Sent PacketPlayOutUpdateAttributes[32, legacy: 44] to Kevi
+]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW1998.
+
+NFO]: [ProtocolLib] Sent PacketPlayOutKeepAlive[0, legacy: 0] to KevinW199
+NFO]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW19
+NFO]: [ProtocolLib] Sent PacketPlayOutEntityDestroy[19, legacy: 29] to Kev
+NFO]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW19
+NFO]: [ProtocolLib] Sent PacketPlayOutKeepAlive[0, legacy: 0] to KevinW199
+NFO]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW19
+NFO]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW19
+NFO]: [ProtocolLib] Sent PacketPlayOutKeepAlive[0, legacy: 0] to KevinW199
+NFO]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW19
+NFO]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW19
+NFO]: [ProtocolLib] Sent PacketPlayOutKeepAlive[0, legacy: 0] to KevinW199
+NFO]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW19
+
+NFO]: [ProtocolLib] Sent PacketPlayOutTileEntityData[53, legacy: 132] to K
+NFO]: [ProtocolLib] Sent PacketPlayOutBlockChange[35, legacy: 53] to Kevin
+NFO]: [ProtocolLib] Sent PacketPlayOutBlockChange[35, legacy: 53] to Kevin
+NFO]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW19
+
+NFO]: [ProtocolLib] Sent PacketPlayOutKeepAlive[0, legacy: 0] to KevinW199
+NFO]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW19
+NFO]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW19
+NFO]: [ProtocolLib] Sent PacketPlayOutKeepAlive[0, legacy: 0] to KevinW199
+NFO]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW19
+NFO]: [ProtocolLib] Sent PacketPlayOutUpdateTime[3, legacy: 4] to KevinW19
+NFO]: [ProtocolLib] Sent PacketPlayOutKeepAlive[0, legacy: 0] to KevinW199
+
+
+
+Client: 
+[09:43:31 INFO]: [ProtocolLib] Received PacketPlayInUseItem[246, legacy: -1] from Kev
+[09:43:31 INFO]: [ProtocolLib] Received PacketPlayInArmAnimation[10, legacy: 18] from
+[09:43:53 INFO]: [ProtocolLib] Received PacketPlayInUseItem[246, legacy: -1] from Kev
+[09:43:53 INFO]: [ProtocolLib] Received PacketPlayInArmAnimation[10, legacy: 18] from

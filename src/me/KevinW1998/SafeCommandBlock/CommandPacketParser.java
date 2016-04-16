@@ -1,75 +1,53 @@
 package me.KevinW1998.SafeCommandBlock;
 
-import java.lang.reflect.Field;
-import java.nio.charset.StandardCharsets;
-
-import net.minecraft.server.v1_8_R1.PacketDataSerializer;
-import net.minecraft.server.v1_8_R1.PacketPlayInCustomPayload;
+import java.io.UnsupportedEncodingException;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 
+import io.netty.buffer.ByteBuf;
+
 public class CommandPacketParser {
-	
-	public static String getPayloadCommand(PacketPlayInCustomPayload customPayload){
-		Class<? extends PacketPlayInCustomPayload> clazzCustomPayload = customPayload.getClass();
-		Field[] fields = clazzCustomPayload.getDeclaredFields();
-		for(Field f : fields){
-			f.setAccessible(true);
-			Object fieldObj;
-			try {
-				fieldObj = f.get(customPayload);
-			} catch (IllegalArgumentException e) {
-				e.printStackTrace();
-				return "";
-			} catch (IllegalAccessException e) {
-				e.printStackTrace();
-				return "";
-			}
-			if(fieldObj instanceof String){
-				return (String)fieldObj;
-			}
-		}
-		return "";
-	}
-	
-	public static PacketDataSerializer getSerializer(PacketPlayInCustomPayload customPayload){
-		Class<? extends PacketPlayInCustomPayload> clazzCustomPayload = customPayload.getClass();
-		Field[] fields = clazzCustomPayload.getDeclaredFields();
-		for(Field f : fields){
-			f.setAccessible(true);
-			Object fieldObj;
-			try {
-				fieldObj = f.get(customPayload);
-			} catch (IllegalArgumentException e) {
-				e.printStackTrace();
-				return null;
-			} catch (IllegalAccessException e) {
-				e.printStackTrace();
-				return null;
-			}
-			if(fieldObj instanceof PacketDataSerializer){
-				return (PacketDataSerializer)fieldObj;
-			}
-		}
-		return null;
-	}
-	
-	public static String extractCommandBlockCommand(PacketPlayInCustomPayload customPayload){
-		PacketDataSerializer pds = getSerializer(customPayload);
-		return pds.toString(14, pds.readableBytes()-15, StandardCharsets.UTF_8);
-	}
-	
+	public static int readVarInt(ByteBuf buf) {
+        int varInt = 0;
+        int counter = 0;
+
+        byte nextByte;
+
+        do {
+            nextByte = buf.readByte();
+            varInt |= (nextByte & 127) << counter++ * 7;
+            if (counter > 5) {
+                throw new RuntimeException("VarInt too big");
+            }
+        } while ((nextByte & 128) == 128);
+
+        return varInt;
+    }
 	
 	public static boolean isCommandBlockPacket(PacketContainer packet){
-		if(packet.getType()==PacketType.Play.Client.CUSTOM_PAYLOAD){
-			PacketPlayInCustomPayload plIn = (PacketPlayInCustomPayload)packet.getHandle();
-			return getPayloadCommand(plIn).equals("MC|AdvCdm");
+		if(packet.getType() == PacketType.Play.Client.CUSTOM_PAYLOAD){						
+			return packet.getStrings().read(0).equals("MC|AdvCdm");
 		}
 		return false;
 	}
 	
-	public static String getCmd(PacketContainer packet){
-		return extractCommandBlockCommand((PacketPlayInCustomPayload)packet.getHandle());
+	public static String getCmd(PacketContainer packet) {
+		if(!isCommandBlockPacket(packet))
+			throw new IllegalArgumentException("Wrong type of packet, expected custom payload!");
+		
+		// http://wiki.vg/Plugin_channels#MC.7CAutoCmd
+		ByteBuf buf = ((ByteBuf) packet.getModifier().withType(ByteBuf.class).read(0)).duplicate();
+		buf.readInt(); // x
+		buf.readInt(); // y
+		buf.readInt(); // z
+		int cmdLen = readVarInt(buf); // length of Command (VarInt)
+		byte[] cmdBuf = new byte[cmdLen]; // Actual command
+		buf.readBytes(cmdBuf);
+		try {
+			return new String(cmdBuf, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			throw new IllegalStateException("Failed to convert Command text to UTF-8!", e);
+		}
 	}
 }
