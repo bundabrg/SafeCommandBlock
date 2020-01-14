@@ -6,6 +6,7 @@ import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 
 import io.netty.buffer.ByteBuf;
+import org.bukkit.Bukkit;
 
 public class CommandPacketParser {
 	public static int readVarInt(ByteBuf buf) {
@@ -26,8 +27,9 @@ public class CommandPacketParser {
     }
 	
 	public static boolean isCommandBlockPacket(PacketContainer packet){
-		if(packet.getType() == PacketType.Play.Client.CUSTOM_PAYLOAD){						
-			return packet.getStrings().read(0).equals("MC|AdvCdm");
+		if(packet.getType() == PacketType.Play.Client.CUSTOM_PAYLOAD){
+			Bukkit.getLogger().warning(packet.toString());
+			return packet.getStrings().read(0).equals("MC|AdvCmd");
 		}
 		return false;
 	}

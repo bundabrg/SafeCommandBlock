@@ -89,7 +89,7 @@ public class SafeCommandBlockCommands {
 		
 		
 		Block seeBlock = SafeCommandUtils.getTargetBlock(p, 200);
-		if (seeBlock.getType() != Material.COMMAND && !(seeBlock.getState() instanceof CommandBlock)) {
+		if (seeBlock.getType() != Material.COMMAND_BLOCK && !(seeBlock.getState() instanceof CommandBlock)) {
 			p.sendMessage(ChatColor.RED + "You need to look at the command block to set the command!");
 			return;
 		}
