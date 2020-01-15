@@ -29,7 +29,8 @@ public class CommandPacketParser {
 	public static boolean isCommandBlockPacket(PacketContainer packet){
 		if(packet.getType() == PacketType.Play.Client.CUSTOM_PAYLOAD){
 			Bukkit.getLogger().warning(packet.toString());
-			return packet.getStrings().read(0).equals("MC|AdvCmd");
+			Bukkit.getLogger().warning(packet.getMinecraftKeys().read(0).getFullKey());
+			return packet.getMinecraftKeys().read(0).getFullKey().equals("MC|AdvCmd");
 		}
 		return false;
 	}
